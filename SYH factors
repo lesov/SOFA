@@ -1,0 +1,59 @@
+
+
+Out of Band (OOB) Delivery to authenticatee 
+
+is a process of delivering an OTP to the end user. For best security, the delivery
+channel should not use same hardware that is used for business transactions.
+For instance, if an RSA one-time-passcode (OTP) is delivered on demand from an
+RSA web site to your browser, it would not be considered as strong as if you
+read the RSA OTP from your physical SecurID token. When the browser is used to
+perform business transactions as well as to retrieve and display the OTP, it is
+subject to the same risks as the browser session.
+
+ 
+
+Out of Band (OOB) Submit to authenticator
+
+is a process of user providing an OTP to the Wells Fargo for validation. Ideally,
+the “something you have” factor should not be submitted to authenticator by the
+same hardware that is performing business transactions.  For example, when RSA Token is submitted by
+the browser to a web site the OTP is still vulnerable to the Man in the browser
+attack, because malware on the machine performing transaction can intercept the
+submitted OTP. New ideas and solutions are developing in this space.
+
+ 
+
+Platform Security
+
+requires defines the environment under which the application generating “something you have” is
+running. If the platform is not considered secure, then malicious processes
+running on the insecure platform can intercept the authentication factor.
+
+ 
+
+Secure Delivery 
+
+that some secret is passed securely between the user and the authentication
+system when OOB is used. Strong provisioning and management of OOB channel is a
+pre-condition required for secure delivery. For example the OOB SMS text does
+not support secure delivery because it OTP is not encrypted in transit.
+
+ 
+
+High Entropy requirement
+
+is important to the “something you know” factor but in many cases it also
+applied to the “something you have” factor. The probability for an attacker to
+guess the factor should be less than 2-14 (1 time in 16384 attempts)
+[1]. For example, OTP send to the user’s phone or digital device
+fingerprint should meet the high entropy requirement.
+
+ 
+
+Device Security
+
+different devices have different levels of device security
+from physical to application level of the OSI model. FIPS 140-2 standard
+identifies requirements that make devices much more difficult to crack.  Low device security circumvents device
+uniqueness allowing an attacker to copy the device.
+
